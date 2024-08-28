@@ -12,15 +12,16 @@ import lombok.*;
 public class MemberDto {//회원정보에 필요한 내용을 필드로 정의를 한다.
     private Long id;
     private  String memberEmail;
+    private String memberPhonenumber;
     private  String memberPassword;
-    private  String memberName;
+    private  String memberBirthday;
 
     public static MemberDto toMemberDto(MemberEntity memberEntity) {
         MemberDto memberDto = new MemberDto();
         memberDto.setId(memberEntity.getId());
         memberDto.setMemberEmail(memberEntity.getMemberEmail());
         memberDto.setMemberPassword(memberEntity.getMemberPassword());
-        memberDto.setMemberName(memberEntity.getMemberName());
+        memberDto.setMemberBirthday(memberEntity.getMemberBirthday());
         return memberDto;
     }
 

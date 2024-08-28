@@ -20,19 +20,25 @@ public class MemberEntity {
   private Long id;
 
   @Column(unique = true)
+  private String memberPhonenumber;
+
+  @Column(unique = true)
   private String memberEmail;
 
   @Column
   private String memberPassword;
 
   @Column
-  private String memberName;
+  private String memberBirthday;
+
+
 
   public static MemberEntity toMemberEntity(MemberDto memberDto) {
     MemberEntity entity = new MemberEntity();
     entity.setMemberEmail(memberDto.getMemberEmail());
-    entity.setMemberName(memberDto.getMemberName());
+    entity.setMemberPhonenumber(memberDto.getMemberPhonenumber());
     entity.setMemberPassword(memberDto.getMemberPassword());
+    entity.setMemberBirthday(memberDto.getMemberBirthday());
     return entity;
   }
 
@@ -40,7 +46,8 @@ public class MemberEntity {
     MemberEntity entity = new MemberEntity();
     entity.setId(memberDto.getId());
     entity.setMemberEmail(memberDto.getMemberEmail());
-    entity.setMemberName(memberDto.getMemberName());
+    entity.setMemberPhonenumber(memberDto.getMemberPhonenumber());
+    entity.setMemberBirthday(memberDto.getMemberBirthday());
     entity.setMemberPassword(memberDto.getMemberPassword());
     return entity;
   }

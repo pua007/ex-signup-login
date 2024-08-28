@@ -22,6 +22,6 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
       #프로젝트를 실행할 때 마다 테이블이 다시만들어진다.
-      ddl-auto: update
+      ddl-auto: create
     open-in-view: false
     show-sql: true

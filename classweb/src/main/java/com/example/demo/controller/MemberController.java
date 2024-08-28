@@ -7,15 +7,22 @@ import com.example.demo.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class MemberController {
     //생성자 주입방식
     private final MemberService memberService;
+
+    @PostMapping("/signup")
+    public ResponseEntity<MemberEntity> signup(@ResponseBody MemberEntity memberEntity){
+
+    }
 
     //회원가입 페이지 출력요청
     @GetMapping("/member/save")
